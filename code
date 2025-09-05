@@ -1,0 +1,64 @@
+tarefas = []
+opcao=1
+numero=1
+
+while True:
+    print("Bem - vindo a lista de tarefas")
+    print("Deseja fazer uma lista de tarefas \n1) Sim \n2) Não")
+    numero =int(input("Digite a opção: "))
+
+    if numero ==2:
+        break
+
+    if opcao ==1:
+        print("\n Voce deseja: \n 1) Lista de Tarefas \n 2) Adicionar Tarefas \n3) Pesquisar tarefas \n4) Remover tarefas \n 5) Substituir tarefas \n 6) Sair")
+        opcao = int(input("Digite a opção: "))
+
+        if opcao ==1:
+            if len(tarefas)==0:
+                print("Nenhuma tarefas existentes")
+
+            else:
+                for i in tarefas:
+                    print("lISTAR")
+                    print("-",i)
+                    print("\n")
+
+        elif opcao ==2:
+            novaTarefa = input("Digite a nova tarefa: ")
+            tarefas.append(novaTarefa)
+            print("Tarefa adicionada com sucesso")
+
+        elif opcao == 3:
+            codigo = int(input("Digite o codigo da tarefa: "))
+            if codigo >= 1 and codigo <= len(tarefas):
+                novoTarefa = tarefas[codigo - 1]
+                print("Tarefa pesquisada foi: ", novoTarefa)
+
+            else:
+                print("Nenhuma tarefa encontrada.")
+        elif opcao == 4:
+            codigo = int(input("Digite o codigo da tarefa: "))
+            if codigo >= 1 and codigo <= len(tarefas):
+                remover = tarefas.pop(codigo - 1)
+                print("Tarefa removida com sucesso", remover)
+            else:
+                print("Nenhuma tarefa encontrada.")
+
+        elif opcao == 5:
+            codigo = int(input("Digite o codigo da tarefa: "))
+            if codigo >= 1 and codigo <= len(tarefas):
+                novoTarefa = input("Digite o nome da tarefa: ")
+                tarefas[codigo - 1] = novoTarefa
+                print("Tarefa substituida com sucesso", )
+            else:
+                print("Nenhuma tarefa encontrada.")
+
+        elif opcao == 6:
+            nota = int(input("Digite a nota de avaliação de 0 a 10: "))
+            if nota >=0 and nota <=10:
+                print("Tarefa avaliada com sucesso",'"'+str(nota)+'"')
+            else:print("Nota invalida,por favor tente novamente")
+
+        print("Obrigado por usar o programa de tarefas")
+        break[]
